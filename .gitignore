@@ -17,6 +17,7 @@
 /storage/*
 !/storage/.keep
 coverage/
+.coveralls.yml
 
 /node_modules
 /yarn-error.log
