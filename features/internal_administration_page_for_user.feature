@@ -11,6 +11,5 @@ Feature: Internal administration page for user
         And I am on the 'landing' page
 
         Scenario:
-            Then show me the page
-            When I click on 'current_user_show'
+            When I click on 'My account'
             Then I should be redirected to the "My account" page

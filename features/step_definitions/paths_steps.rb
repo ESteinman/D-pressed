@@ -17,7 +17,7 @@ def page_path(path)
     elsif path == 'Registration'
         new_user_registration_path
     elsif path == 'My account'
-        user_path
+        user_path(@user)
     else
         root_path
     end
