@@ -4,8 +4,6 @@
   %p= article.body
   %p= article.created_at.to_date
 
-= link_to "My account", user_path(current_user)
-
-- unless current_user 
-  = link_to 'Registration' , new_user_registration_path
+- if current_user
+  = link_to "My account", user_path(current_user)
 

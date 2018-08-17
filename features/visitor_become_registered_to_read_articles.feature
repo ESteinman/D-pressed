@@ -9,9 +9,7 @@ Feature: A visitor needs to become a registered user in order to read the articl
         | This is so sad | A recent report suggest that news are mostly sad. Which is sad.  | 
 
     Scenario: Visitor registers
-        When I am on the 'Landing' page
-        And I click on 'Registration'
-        Then I am on the 'Registration' page
+        When I am on the 'Registration' page
         And I fill in 'Email' field with 'pablo@test.com'
         And I fill in 'Password' field with 'my-password'
         And I fill in 'Password confirmation' field with 'my-password'
