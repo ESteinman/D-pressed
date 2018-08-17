@@ -12,6 +12,8 @@ def page_path(path)
         article_path(article_title)
     elsif path == 'Registration'
         new_user_registration_path
+    elsif path == 'My account'
+        user_path
     else
         root_path
     end
