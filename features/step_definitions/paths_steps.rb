@@ -2,6 +2,10 @@ When("I am on the {string} page") do |page_name|
     visit page_path(page_name)
 end
 
+When("I should be redirected to the {string} page") do |page|
+    visit page_path(page)    
+end
+
 Given("I visit the Create article page") do
     visit new_article_path
 end
@@ -19,7 +23,5 @@ def page_path(path)
     end
 end
 
-When("I should be redirected to the {string} page") do |page|
-    visit page_path(page)    
-end
+
   
