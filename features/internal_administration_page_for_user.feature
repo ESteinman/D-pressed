@@ -13,3 +13,5 @@ Feature: Internal administration page for user
         Scenario:
             When I click on 'My account'
             Then I should be redirected to the "My account" page
+            Then I click on "Edit your account"
+            Then I should be redirected to the "Edit account" page
