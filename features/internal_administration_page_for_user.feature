@@ -22,6 +22,8 @@ Feature: Internal administration page for user
             And I fill in 'Password confirmation' field with 'pablos-password'
             And I fill in 'Current password' field with 'my-password'
             And I click on 'Update'
+            Then I should see "Your account has been updated successfully."
+
 
         Scenario: User delete account
             When I am on the 'My account' page
@@ -29,5 +31,6 @@ Feature: Internal administration page for user
             Then I should see 'Cancel my account'
             And I should see 'Unhappy?'
             And I click on 'Cancel my account'
+            Then I should see "Bye! Your account has been successfully cancelled. We hope to see you again soon."
             
             
