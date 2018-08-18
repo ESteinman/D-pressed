@@ -13,5 +13,13 @@ Feature: Internal administration page for user
         Scenario:
             When I click on 'My account'
             Then I should be redirected to the "My account" page
-            Then I click on "Edit your account"
-            Then I should be redirected to the "Edit account" page
+
+
+            
+        Scenario: User can update password
+            When I am on the 'My account' page
+            And I click on "Edit your account"
+            And I fill in 'Email' field with 'pablo@test.com'
+            And I fill in 'Password' field with 'pablos-password'
+            And I fill in 'Password confirmation' field with 'pablos-password'
+            And I fill in 'Current password' field with 'my-password'
