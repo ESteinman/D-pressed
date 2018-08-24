@@ -19,10 +19,16 @@ When("I click {string} button") do |button|
 end
 
 When("I click on {string}") do |element|
-    click_on(element)
+    click_on element
 end
 
 Given("I am logged in as {string}") do |email|
     @user = User.find_by(email: email)
-     login_as(@user, scope: :user)
- end
+    login_as(@user, scope: :user)
+end
+
+Then("I click {string} button in the {string} section") do |element_text, section_name|
+   within('#subscription') do
+      click_on element_text 
+   end 
+end

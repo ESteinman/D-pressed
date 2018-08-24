@@ -16,6 +16,7 @@ gem 'aws-sdk-s3', require: false
 gem 'faker'
 gem 'pundit'
 gem 'webpacker', '~> 3.4'
+gem 'stripe-rails'
 
 group :development, :test do
   gem 'chromedriver-helper'

@@ -26,5 +26,9 @@ module DPressed
       generate.controller_specs false
       generate.system_tests false
     end
+
+    config.stripe.publishable_key = 'pk_test_XXXYYYZZZ'
+    config.stripe.secret_key = "sk_test_xxyyzz"
+
   end
 end
