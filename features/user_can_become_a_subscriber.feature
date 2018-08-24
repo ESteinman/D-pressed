@@ -15,7 +15,7 @@ Feature: User can become a Subscriber
             | pablo@test.com | basic_user |
             | sub@scriber.se | subscriber |
 
-    Scenario: Basic_user presses button to become a Subscriber
+    Scenario: Basic_user makes payment and becomes a Subscriber [Happy path]
         When I am logged in as 'pablo@test.com'
         And I am on the 'My account' page
         Then I should see 'basic_user'
@@ -31,9 +31,14 @@ Feature: User can become a Subscriber
         And my user role is 'subscriber'
         And I should be on the 'My account' page
 
-    Scenario: Subcsriber presses button to become a Subscriber
-        When I am logged in as 'sub@scriber.se'
+    Scenario: Basic users payment fails [Sad path]
+        When I am logged in as 'pablo@test.com'
         And I am on the 'My account' page
-        Then I should see 'subscriber'
-        And I click 'Subscribe' button
-        Then I should see 'You are already subscribed'
+        Then I should see 'basic_user'
+        And I click 'Pay with Card' button in the "Become a subscriber" section
+        And I fill in the stripe form field "Email" with "pablo@test.com"
+        And I fill in the stripe form field "Card number" with "4000000000009995"
+        And I fill in the stripe form field "CVC" with "123"
+        And I fill in the stripe form field "Expiry" with "11/20"
+        And I submit the stripe form
+        And the card got declined with message 'Your card has insufficient funds.'

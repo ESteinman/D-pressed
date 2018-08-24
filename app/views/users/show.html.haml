@@ -3,6 +3,7 @@
 %p 
     My account status:
     = @user.role
+
 #subscription
     =# button_to 'Subscribe', user_path, method: :patch
     = form_with url: charges_path do |form|
