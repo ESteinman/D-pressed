@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root controller: :articles, action: :index
   resources :articles, only: [:create, :new, :show]
   resources :users, only: [:show, :update]
+  post :charges, controller: :users, action: :create_subscription
 end

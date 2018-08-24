@@ -26,5 +26,9 @@ module DPressed
       generate.controller_specs false
       generate.system_tests false
     end
+
+    config.stripe.publishable_key = Rails.application.credentials.stripe[:pub_key]
+    config.stripe.secret_key = Rails.application.credentials.stripe[:secret_key]
+
   end
 end
