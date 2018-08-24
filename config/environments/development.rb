@@ -36,4 +36,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.stripe.publishable_key = 'pk_test_XXXYYYZZZ'
+
 end
