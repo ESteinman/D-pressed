@@ -19,15 +19,13 @@ Feature: User can become a Subscriber
         When I am logged in as 'pablo@test.com'
         And I am on the 'My account' page
         Then I should see 'basic_user'
-        #Then stop
         And I click 'Pay with Card' button in the "Become a subscriber" section
         And I fill in the stripe form field "Email" with "pablo@test.com"
         And I fill in the stripe form field "Card number" with "4242 4242 4242 4242"
         And I fill in the stripe form field "CVC" with "123"
         And I fill in the stripe form field "Expiry" with "11/20"
-        Then stop
         And I submit the stripe form
-        
+        And I wait 3 seconds
         Then I should see 'You have succesfully subscribed to D-pressed'
         Then I should see 'subscriber'
         And my user role is 'subscriber'

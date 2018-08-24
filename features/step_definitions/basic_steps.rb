@@ -44,4 +44,5 @@ When("I submit the stripe form") do
     within_frame @stripe_iframe do  
         find('.Section-button').click
     end
+    sleep(3)
 end

@@ -27,8 +27,8 @@ module DPressed
       generate.system_tests false
     end
 
-    config.stripe.publishable_key = 'pk_test_XXXYYYZZZ'
-    config.stripe.secret_key = "sk_test_xxyyzz"
+    config.stripe.publishable_key = Rails.application.credentials.stripe[:pub_key]
+    config.stripe.secret_key = Rails.application.credentials.stripe[:secret_key]
 
   end
 end
