@@ -16,6 +16,8 @@ Bundler.require(*Rails.groups)
 module DPressed
   class Application < Rails::Application
     config.load_defaults 5.2
+    config.i18n.available_locales [:se, :en]
+    config.i18n.default_locale :en
 
     config.generators do |generate|
       generate.helper false

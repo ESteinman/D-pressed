@@ -4,16 +4,18 @@ Rails.application.routes.draw do
   resources :articles, only: [:create, :new, :show] do 
     resources :ratings, only: [:create]
   end
-  resources :users, only: [:show]
-  
-  resources :articles, only: [:create, :new, :show]
-  resources :users, only: [:show]
+  resources :users, only: [:show, :update]
 
   resources :articles do
     resources :comments
   end
 
+
   resources :users, only: [:show, :update]
   post :charges, controller: :users, action: :create_subscription
 
+  scope "(:locale)", locale: /en|se/ do
+    resources :books
+  end
 end
+

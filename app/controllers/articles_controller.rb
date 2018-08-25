@@ -18,9 +18,9 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.create(article_params)
     if @article.persisted?
-      redirect_to root_path, notice: 'Article successfully created.'
+      redirect_to root_path, notice: t('article_successfully_created.')
     else
-      flash[:error] = 'Fields can\'t be blank. Your article could not be saved'
+      flash[:error] = t('Fields can\'t be blank. Your article could not be saved')
       render :new
     end
   end
