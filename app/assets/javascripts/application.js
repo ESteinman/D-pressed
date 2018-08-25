@@ -14,3 +14,35 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+function handleRating(path) {
+    let ratingButtons = document.querySelectorAll('button')
+    let noticeDiv = document.querySelector('.notice')
+    let alertDiv = document.querySelector('.alert')
+    let ratingDiv = document.querySelector('#rating')
+    ratingButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault()
+            let value = button.dataset.rating
+            let body = JSON.stringify({ rating: value })
+            fetch(path, {
+                method: 'POST',
+                body: body,
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-Token': Rails.csrfToken()
+                }
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                noticeDiv.innerHTML = data.message
+                ratingDiv.style.display = 'none'
+            }).catch((error) => {
+                alertDiv.innerHTML = data.error
+            });
+        })
+    })
+}
+
