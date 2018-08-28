@@ -44,6 +44,15 @@
   *
   * @import "tailwindcss/utilities";
   */
+
+  .article_card {
+    @apply max-w-md w-full; 
+  }
+
+  .members_font {
+    @apply text-grey-darker text-base;     
+  }
+
  @tailwind utilities;
  
  /**

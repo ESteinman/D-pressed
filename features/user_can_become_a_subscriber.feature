@@ -27,7 +27,7 @@ Feature: User can become a Subscriber
         And I submit the stripe form
         And I wait 3 seconds
         Then I should see 'You have succesfully subscribed to D-pressed'
-        Then I should see 'subscriber'
+        Then I should see 'Subscriber'
         And my user role is 'subscriber'
         And I should be on the 'My account' page
 

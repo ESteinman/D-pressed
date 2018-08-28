@@ -1,11 +1,13 @@
-= link_to 'Edit my account', edit_user_registration_path
-
 %p 
     My account status:
-    = @user.role
+    = @user.role.humanize
 
 #subscription
     =# button_to 'Subscribe', user_path, method: :patch
     = form_with url: charges_path do |form|
         = form.hidden_field :user_id, value: @user.id 
         %script.stripe-button{src: 'https://checkout.stripe.com/checkout.js', data: {amount: (10*100), description: 'Subscription fee', currency: 'usd', key: Rails.application.credentials.stripe[:pub_key]}}
+
+= link_to t('edit_my_account'), edit_user_registration_path
+%br/
+= button_to t('subscribe'), user_path, method: :patch

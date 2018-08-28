@@ -8,14 +8,17 @@ en:
   new-password: new password
   remember_me: Remember me
   sign_up: Sign up
+  log_out: Log out
   password_confirmation: password confirmation
   log_in: Log in
   characters_minimum: characters minimum
   create_article: Create Article
-  my account: My account
+  my_account: My account
   back: Back
   cancel_my_account: Cancel my account
   update: Update
   new_article: New Article
   english: English
   svenska: Swedish
+  edit_my_account: Edit my account
+  subscribe: Subscribe
