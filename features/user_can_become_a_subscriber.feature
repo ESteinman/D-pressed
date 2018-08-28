@@ -18,7 +18,7 @@ Feature: User can become a Subscriber
     Scenario: Basic_user makes payment and becomes a Subscriber [Happy path]
         When I am logged in as 'pablo@test.com'
         And I am on the 'My account' page
-        Then I should see 'basic_user'
+        Then I should see 'Basic user'
         And I click 'Pay with Card' button in the "Become a subscriber" section
         And I fill in the stripe form field "Email" with "pablo@test.com"
         And I fill in the stripe form field "Card number" with "4242 4242 4242 4242"
@@ -34,7 +34,7 @@ Feature: User can become a Subscriber
     Scenario: Basic users payment fails because of insufficient funds [Sad path]
         When I am logged in as 'pablo@test.com'
         And I am on the 'My account' page
-        Then I should see 'basic_user'
+        Then I should see 'Basic user'
         And I click 'Pay with Card' button in the "Become a subscriber" section
         And I fill in the stripe form field "Email" with "pablo@test.com"
         And I fill in the stripe form field "Card number" with "4000000000009995"
@@ -46,7 +46,7 @@ Feature: User can become a Subscriber
     Scenario: Basic users payment fails because of error processing his cars. [Sad path]
         When I am logged in as 'pablo@test.com'
         And I am on the 'My account' page
-        Then I should see 'basic_user'
+        Then I should see 'Basic user'
         And I click 'Pay with Card' button in the "Become a subscriber" section
         And I fill in the stripe form field "Email" with "pablo@test.com"
         And I fill in the stripe form field "Card number" with "4000000000000119"
