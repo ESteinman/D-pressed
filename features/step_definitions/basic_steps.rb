@@ -46,3 +46,11 @@ When("I submit the stripe form") do
     end
     sleep(3)
 end
+
+Then("the card got declined with message {string}") do |content|
+    within_frame @stripe_iframe do
+        within '.Popover-content' do
+        expect(page).to have_content content
+        end
+    end
+end

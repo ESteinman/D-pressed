@@ -15,6 +15,7 @@ In order to get the platform running, you need the following:
 
   - Rails version 5.2.1
   - Ruby version 2.4.3
+  - Yarn
   - Bundler
 In addition you need to install the following servers:
 

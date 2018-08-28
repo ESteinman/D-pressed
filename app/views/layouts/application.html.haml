@@ -2,6 +2,8 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    = link_to_unless_current t('english'), locale: "en"
+    = link_to_unless_current t('svenska'), locale: "se"
     %title DPressed
     = csrf_meta_tags
     = csp_meta_tag
@@ -12,8 +14,10 @@
 
   %body
     %nav
-      = link_to 'New Article', new_article_path
+      = link_to t('new_article'), new_article_path
 
+    .notice
+    .alert
     = flash[:notice]
     = flash[:error]
     = yield

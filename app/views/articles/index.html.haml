@@ -1,3 +1,5 @@
+= link_to t('registration') , new_user_registration_path
+
 .right_ad{:style => "float:right;"}
   = link_to image_tag("test.png"), "https://craftacademy.se/"
 %br/
@@ -9,10 +11,9 @@
   %p= article.title
   %p= article.body
   %p
-    Published on:
+    = t('published_on')
     = article.created_at.to_date
 
-= link_to 'Registration' , new_user_registration_path
 - if current_user 
-  = link_to "My account", user_path(current_user)
+  = link_to t('my account'), user_path(current_user)
 
