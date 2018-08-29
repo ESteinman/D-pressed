@@ -20,6 +20,8 @@ def page_path(path)
         new_user_session_path
     elsif path == 'Create Article' || path == 'New Article'
         new_article_path
+    elsif path == 'landing'
+        root_path
     else
         root_path
     end
