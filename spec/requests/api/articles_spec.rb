@@ -1,7 +1,7 @@
 RSpec.describe 'Api::ArticlesController', type: :request do
   describe "GET /api/articles" do
     let!(:articles) { 5.times {create(:article)}}
-    before do
+    before do 
       get '/api/articles'
     end
     it "returns a collection of 5 articles" do
