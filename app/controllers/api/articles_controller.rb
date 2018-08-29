@@ -1,4 +1,5 @@
 class Api::ArticlesController < ApiController
+  before_action :authenticate_api_user!, only: [:show]
   def index
     articles = Article.all  
     render json: articles

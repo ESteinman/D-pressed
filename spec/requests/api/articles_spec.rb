@@ -10,13 +10,31 @@ RSpec.describe 'Api::ArticlesController', type: :request do
   end
 
   describe "GET /api/articles/:id" do
+    let(:user) {create(:user)}
+    let(:credentials) { user.create_new_auth_token}
+    let(:headers) { { HTTP_ACCEPT: 'application/json' }.merge!(credentials) }
     let!(:article) { create(:article, title: 'Rails 5 is awesome!')}
-    before do
-      get "/api/articles/#{article.id}"
+    
+    describe 'for an authenticated user' do 
+      before do
+        get "/api/articles/#{article.id}", headers: headers
+      end
+  
+      it 'retuns an instance of Article' do 
+        expect(JSON.parse(response.body)['title']).to eq 'Rails 5 is awesome!'
+      end
     end
 
-    it 'retuns an instance of Article' do 
-      expect(JSON.parse(response.body)['title']).to eq 'Rails 5 is awesome!'
+    describe 'unauthentited user' do 
+      before do 
+        get "/api/articles/#{article.id}", headers: nil
+      end
+
+      it 'returns an error message' do  
+        expected_error_message = "You need to sign in or sign up before continuing."
+        expect(JSON.parse(response.body)['errors']).to include expected_error_message
+      end
     end
+    
   end
 end
