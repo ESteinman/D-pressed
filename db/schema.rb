@@ -82,14 +82,14 @@ ActiveRecord::Schema.define(version: 2018_08_27_165812) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role"
+    t.float "latitude"
+    t.float "longitude"
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
     t.text "tokens"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.float "latitude"
-    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
