@@ -44,7 +44,21 @@
   *
   * @import "tailwindcss/utilities";
   */
+  .field {
+    @apply block text-black m-2 font-bold pr-4 mb-1; 
+  }
 
+  .category-link {
+    @apply block no-underline py-5 px-4 text-white;
+  }
+
+  .category-link:hover {
+    @apply text-grey-lighter;
+  }
+  
+  .u-list-navbar {
+    @apply list-reset text-xl;
+  }
   .article_card {
     @apply max-w-md w-full; 
   }
@@ -69,4 +83,42 @@
   * @import "utilities/background-patterns";
   * @import "utilities/skew-transforms";
   */
+ a:link {
+   text-decoration: none;
+   color: black;
+   margin: 10px;
+ }
+
+ a:visited {
+  text-decoration: none;
+  color: dark-grey;  
+ } 
+
+ a:active {
+  text-decoration: none;
+  color: yellow;
+  box-shadow: none;
+  top: 5px;
+ }
+ a:hover {
+   color: hotpink; 
+   text-decoration: underline;
+   cursor: pointer;
+   box-shadow: 5px;
+ }
  
+ body {
+  background-color: lightgray;   
+ }
+ 
+ @screen md {
+  .field { 
+    @apply text-center mb-0;
+  }
+  .u-link-navbar {
+    @apply flex items-center;
+  }
+  .category-link {
+    @apply inline py-0;
+  }
+}

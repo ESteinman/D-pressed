@@ -17,6 +17,8 @@ gem 'pundit'
 gem 'webpacker', '~> 3.4'
 gem 'rack-cors', require: 'rack/cors'
 gem 'devise_token_auth'
+gem 'active_model_serializers'
+
 
 group :development, :test do
   gem 'chromedriver-helper'

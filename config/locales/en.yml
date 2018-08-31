@@ -1,5 +1,5 @@
 en:
-  flash[:error]: Fields can\'t be blank. Your article could not be saved
+  empty_field: Fields can't be blank. Your article could not be saved
   article_successfully_created: Article successfully created.
   published_on: 'Published on:'
   registration: Registration

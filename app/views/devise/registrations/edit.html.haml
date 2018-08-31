@@ -1,4 +1,4 @@
-%h2
+%h2.m-4.text-black.text-center
   Edit #{resource_name.to_s.humanize}
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = devise_error_messages!
@@ -28,9 +28,13 @@
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password, autocomplete: "current-password"
-  .actions
+    %br/
+  .actions.block.text-black.m-2.font-bold.md:text-center.mb-1.md:mb-0.pr-4
     = f.submit t('update')
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to t('cancel_my_account'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to t('back'), :back
+%p.m-4.text-black.text-center
+  Unhappy? 
+.field
+  #{button_to t('cancel_my_account'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+%br/
+.text-black.text-center
+  = link_to t('back'), :back

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root controller: :articles, action: :index
   resources :articles, only: [:create, :new, :show] do 
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
       sessions: 'api/sessions',
       registrations: 'api/registrations'
     }
+
+    resources :articles, only: [:index, :show]
   end
 end
 

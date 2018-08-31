@@ -17,6 +17,8 @@
 !/log/.keep
 !/tmp/.keep
 
+/stripe.txt
+
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
@@ -36,3 +38,5 @@
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+stripe.txt

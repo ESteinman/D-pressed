@@ -1,9 +1,7 @@
-%nav.flex.items-center.justify-between.flex-wrap.bg-grey.p-6
-  .flex.items-center.flex-no-shrink.text-white.mr-6
-    %svg.fill-current.h-8.w-8.mr-2{height: "54", viewbox: "0", width: "54"}
-    %span.text-xl.tracking-tight D-pressed
-  -@categories.each do |category|
-    .w-full.block.flex-grow.lg:flex.lg:items-center.lg:w-auto
-      .text-sm.lg:flex-grow
-        %a.block.mt-4.lg:inline-block.lg:mt-0.text-black-lighter.hover:text-white.mr-4
-          = category.name
+%nav.bg-black.text-black.md:py-5
+  .container:flex.block.md:items-center.md:justify-between.mx-auto
+    %ul.u-list-navbar.text-xl
+      %li.border-t.md:border-0.md:ml-4
+        - @categories.each do |category|
+          %a.category-link  
+            = category.name

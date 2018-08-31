@@ -1,7 +1,9 @@
+%br/
+= link_to t('edit_my_account'), edit_user_registration_path
+%br/
+%br/
 %p 
     My account status:
     = @user.role.humanize
-
-= link_to t('edit_my_account'), edit_user_registration_path
 %br/
 = button_to t('subscribe'), user_path, method: :patch

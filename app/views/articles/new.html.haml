@@ -1,16 +1,23 @@
 = form_with model: @article, local: true do |form|
-  = form.label :title
+  .field
+    = form.label :title
   %br/
-  = form.text_field :title
+  .field    
+    = form.text_field :title
   %br/
-  = form.collection_select :category_id, @categories, :id, :name
+  .field    
+    = form.collection_select :category_id, @categories, :id, :name
   %br/
-  = form.label :body
+  .field    
+    = form.label :body
   %br/
-  = form.text_area :body
+  .field    
+    = form.text_area :body
   %br/
-  = form.file_field :image
+  .field    
+    = form.file_field :image
   %br/
-  = form.submit t('create_article')
-
-= link_to t('back'), articles_path
+  .field    
+    = form.submit t('create_article')
+  .field  
+    = link_to t('back'), articles_path

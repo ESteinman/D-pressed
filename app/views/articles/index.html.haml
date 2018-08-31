@@ -1,20 +1,19 @@
 .right_ad{:style => "float:right;"}
   = link_to image_tag("ad_vertical_placeholder.png"), "https://craftacademy.se/"
-%br/
-
 = render 'shared/categories_navbar'
 
 - @articles.each do |article|
-  .article_card.lg.flex
+  .flex.justify-center.bg-grey-lighter
     .h-48.lg:h-auto.lg:w-48.flex-none.bg-cover.rounded-t.lg:rounded-t-none.lg:rounded-l.text-center.overflow-hidden
       - if article.image.attached?
         = image_tag article.image
     .border-r.border-b.border-l.border-grey-light.lg:border-l-0.lg:border-t.lg:border-grey-light.bg-white.rounded-b.lg:rounded-b-none.lg:rounded-r.p-4.flex.flex-col.justify-between.leading-normal
-      .mb-8
+      .text-black.font-bold.text-xl.mb-2
         = link_to article.title, article_path(article)
-        .text-black.font-bold.text-s.mb-2= article.category.name
-        %p.text-grey-darker.text-base
-          = truncate(article.body, length: 150) { link_to ' (continued)', article_path(article)} 
+      .text-black.text-s.mb-2
+        = article&.category&.name
+      %p.text-grey-darker.text-base
+        = truncate(article.body, length: 150) { link_to ' (continued)', article_path(article)} 
       .flex.items-center
         .text-sm
           %p.text-black.leading-none 

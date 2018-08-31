@@ -1,12 +1,20 @@
-%nav      
-    = link_to_unless_current t('english'), locale: "en"
-    = link_to_unless_current t('svenska'), locale: "se" 
-    = link_to 'D-pressed', root_path  
-    - unless current_user
-        = link_to t('registration'), new_user_registration_path
-        = link_to t('log_in'), new_user_session_path
-    - if user_signed_in?   
-        = link_to t('my_account'), user_path(current_user)
-        = link_to t('log_out'), destroy_user_session_path, method: :delete
-        - if current_user.author? || current_user.editor?
-            = link_to t('new_article'), new_article_path
+%nav.bg-grey.text-black.py-5
+    .notice
+        = flash[:notice]
+    .alert
+        = flash[:error]
+    .container.md:flex.md:items-center.md:justify-between.mx-auto.px-5
+        %h1.mb-4.md:mb-0.mx-auto.text-2xl= link_to 'D-pressed', root_path 
+        %ul.u-list-navbar
+            %li.border-t.md:border-0.md:ml-4
+                - unless current_user
+                    = link_to t('registration'), new_user_registration_path
+                    = link_to t('log_in'), new_user_session_path  
+                - if user_signed_in?
+                    = link_to t('my_account'), user_path(current_user)
+                    = link_to t('log_out'), destroy_user_session_path, method: :delete                
+                    - if current_user.author? || current_user.editor?
+                        = link_to t('new_article'), new_article_path
+                = link_to_unless_current t('english'), locale: "en"
+                = link_to_unless_current t('svenska'), locale: "se"
+    

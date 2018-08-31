@@ -1,5 +1,5 @@
 se: 
-  flash[:error]: Fält kan inte vara tomma. Din artikel kunde inte sparas
+  empty_field: Fält kan inte vara tomma. Din artikel kunde inte sparas
   article_successfully_created: Artikel skapad.
   published_on: Publicerad 
   registration: Registrering
