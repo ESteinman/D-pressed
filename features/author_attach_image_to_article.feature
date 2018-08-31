@@ -27,6 +27,7 @@ Feature: Author can attach an image to the article
         And I fill in 'Body' field with 'Here is bodytext if a long sad news article'
         And I attach an image-file
         And I click on 'Create Article'
+        Then I wait 2 seconds
         And I should be redirected to the 'landing' page
         Then there should be a Article titled 'My sad news story' in the database
         And I should see 'Article successfully created'
